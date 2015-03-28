@@ -6,8 +6,13 @@ body {
 
 #main {
 	margin: 70px auto;
+	padding: 30px 0;
 	background-color: whitesmoke;
 	border-radius: 10px;
+}
+
+h5 {
+	color: darkblue;
 }
 
 #results {
@@ -19,4 +24,9 @@ body {
 #results p {
 	display: inline;
 	text-align: center;
+}
+
+#randomize-first, #randomize-middle {
+	background-color: darkblue;
+	color: white;
 }
