@@ -1,0 +1,22 @@
+body {
+	color: gray;
+	text-align: center;
+	background-color: #99CCCC;
+}
+
+#main {
+	margin: 70px auto;
+	background-color: whitesmoke;
+	border-radius: 10px;
+}
+
+#results {
+	font-size: 20px;
+	text-align: center;
+	height: 100px;
+}
+
+#results p {
+	display: inline;
+	text-align: center;
+}
