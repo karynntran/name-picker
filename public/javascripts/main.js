@@ -1,4 +1,11 @@
 
+function chooseGender(){
+	$( '.gender' ).click(function(e) {
+	  debugger;
+	  console.log('gender');
+	  e.preventDefault();
+	});
+}
 
 function randomizeNames(gender){
 	return gender[Math.floor(Math.random()*gender.length)].name;
@@ -35,6 +42,6 @@ $( document ).ready (function(){
 	  $( '#middle-name').html(name.toUpperCase());
 	});
 
-
+	chooseGender();
 
 })

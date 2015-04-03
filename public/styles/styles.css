@@ -1,7 +1,7 @@
 body {
 	color: gray;
 	text-align: center;
-	background-color: #99CCCC;
+	background-color: white;
 }
 
 #main {
@@ -9,6 +9,7 @@ body {
 	padding: 30px 0;
 	background-color: whitesmoke;
 	border-radius: 10px;
+	border: lightgray 1px solid;
 }
 
 h5 {
@@ -16,7 +17,7 @@ h5 {
 }
 
 #results {
-	font-size: 20px;
+	font-size: 30px;
 	text-align: center;
 	height: 100px;
 }
@@ -29,4 +30,8 @@ h5 {
 #randomize-first, #randomize-middle {
 	background-color: darkblue;
 	color: white;
+}
+
+#boy, #girl {
+	background-color: lightgray;
 }
