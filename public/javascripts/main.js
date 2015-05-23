@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	for (var i = 0; i < nameTypeArray.length; i++){
 		var submitButton = document.getElementById(nameTypeArray[i] + "Submit");
+		var randomizeButton = document.getElementById(nameTypeArray[i] + "Randomize");
 		var submitResult = document.getElementById(nameTypeArray[i] + "Name");
 
 		submitButton.onclick = (function(submitResult) {
@@ -28,6 +29,15 @@ document.addEventListener('DOMContentLoaded', function(){
                 submitResult.textContent = name;
             }
         })(submitResult);
+
+		randomizeButton.onclick = (function(submitResult) {
+            return function(event) {
+                event.preventDefault();
+                var name = randomizeNames(boyNames);
+                submitResult.textContent = name;
+            }
+        })(submitResult);
+
 	};
 
 
