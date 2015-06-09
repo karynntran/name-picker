@@ -1,21 +1,36 @@
 
 function chooseGender(){
-	$( '.gender' ).click(function(e) {
-	  debugger;
-	  console.log('gender');
-	  e.preventDefault();
-	});
-}
+	var boyButton = document.getElementById("boyButton");
+    var girlButton = document.getElementById("girlButton");
+
+    boyButton.onclick = (function(){
+        genderValue = boyNames;
+    });
+};
 
 function randomizeNames(gender){
 	return gender[Math.floor(Math.random()*gender.length)].name;
 }
 
-
 //on window onload
 document.addEventListener('DOMContentLoaded', function(){
 
 	var nameTypeArray = ["first", "middle", "last"];
+    // var genderButtonsArray = ["boy", "girl"];
+
+    // for (var i = 0; i < genderButtonsArray.length; i++){
+    //     var genderButton = document.getElementById(genderButtonsArray[i] + "Button");
+    //     genderValue = genderButtonsArray[i] + "Names";
+
+    //     genderButton.onclick = (function(genderValue) {
+    //         return function(event) {
+    //             event.preventDefault();
+    //         }
+    //     })(genderValue);
+
+    //     console.log(genderValue);
+    // };
+    chooseGender();    
 
 	for (var i = 0; i < nameTypeArray.length; i++){
 		var submitButton = document.getElementById(nameTypeArray[i] + "Submit");
@@ -30,63 +45,13 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         })(submitResult);
 
-		randomizeButton.onclick = (function(submitResult) {
+        randomizeButton.onclick = (function(submitResult) {
             return function(event) {
                 event.preventDefault();
                 var name = randomizeNames(boyNames);
                 submitResult.textContent = name;
             }
         })(submitResult);
+    };
 
-	};
-
-
-	// $( '#randomize-first' ).click(function(e) {
-	//   e.preventDefault();
-	//   name = randomizeNames(boyNames);
-	//   $( '#first-name').html(name.toUpperCase());
-	// });
-
-	// $( '#randomize-middle' ).click(function(e) {
-	//   e.preventDefault();
-	//   name = randomizeNames(boyNames);
-	//   $( '#middle-name').html(name.toUpperCase());
-	// });
-
-	// chooseGender();
 });
-
-// $( document ).ready (function(){
-// 	$('#first').submit(function( e ) {
-// 		e.preventDefault();
-// 		name = $(this).children("input[name]").val();
-// 		$( '#first-name').html(name.toUpperCase());
-// 	});
-
-// 	$('#middle').submit(function( e ) {
-// 		e.preventDefault();
-// 		name = $(this).children("input[name]").val();
-// 		$( '#middle-name').html(name.toUpperCase());
-// 	});
-
-// 	$('#last').submit(function( e ) {
-// 		e.preventDefault();
-// 		name = $(this).children("input[name]").val();
-// 		$( '#last-name').html(name.toUpperCase());
-// 	});
-
-// 	$( '#randomize-first' ).click(function(e) {
-// 	  e.preventDefault();
-// 	  name = randomizeNames(boyNames);
-// 	  $( '#first-name').html(name.toUpperCase());
-// 	});
-
-// 	$( '#randomize-middle' ).click(function(e) {
-// 	  e.preventDefault();
-// 	  name = randomizeNames(boyNames);
-// 	  $( '#middle-name').html(name.toUpperCase());
-// 	});
-
-// 	chooseGender();
-
-// })
